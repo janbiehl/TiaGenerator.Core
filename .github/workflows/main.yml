@@ -1,21 +1,31 @@
+name: Pack Nuget
 on:
   release:
     types: [published]
-
 jobs:
   publish:
     name: Pack and Publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-dotnet@v3
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
           source-url: https://nuget.pkg.github.com/janbiehl/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: dotnet build TiaGenerator.Core
+      
       - name: Create the package
-        run: dotnet pack --configuration Release TiaGenerator.Core
+        run: dotnet pack --configuration Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/janbiehl/TiaGenerator.Core/releases/tag/${{ github.event.release.tag_name }}" TiaGenerator.Core
+      
+      - name: Archive NuGet Package
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: TiaGenerator.Core
+          path: ./TiaGenerator.Core/TiaGenerator.Core/bin/Release/TiaGenerator.Core.${{ github.event.release.tag_name }}.nupkg
+      
       - name: Publish the package to GPR
-        run: dotnet nuget push TiaGenerator.Core/bin/Release/*.nupkg --api-key ${{secrets.GITHUB_TOKEN}}
+        run: dotnet nuget push **/*.nupkg --api-key ${{secrets.GITHUB_TOKEN}} --no-symbols true
