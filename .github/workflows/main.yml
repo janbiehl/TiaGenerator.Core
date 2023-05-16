@@ -28,4 +28,4 @@ jobs:
           path: /home/runner/work/TiaGenerator.Core/TiaGenerator.Core/TiaGenerator.Core/bin/Release/TiaGenerator.Core.${{ github.event.release.tag_name }}.nupkg
       
       - name: Publish the package to GPR
-        run: dotnet nuget push **/*.nupkg -s "github" -k ${{secrets.GITHUB_TOKEN}}
+        run: dotnet nuget push **/*.nupkg -s "https://nuget.pkg.github.com/janbiehl/index.json" -k ${{secrets.GITHUB_TOKEN}}
