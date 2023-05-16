@@ -18,4 +18,4 @@ jobs:
       - name: Create the package
         run: dotnet pack --configuration Release TiaGenerator.Core
       - name: Publish the package to GPR
-        run: dotnet nuget push TiaGenerator.Core/bin/Release/*.nupkg
+        run: dotnet nuget push TiaGenerator.Core/bin/Release/*.nupkg --api-key ${{secrets.GITHUB_TOKEN}}
