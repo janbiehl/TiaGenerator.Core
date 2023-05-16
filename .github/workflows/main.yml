@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: TiaGenerator.Core
-          path: ./TiaGenerator.Core/TiaGenerator.Core/bin/Release/TiaGenerator.Core.${{ github.event.release.tag_name }}.nupkg
+          path: /home/runner/work/TiaGenerator.Core/TiaGenerator.Core/TiaGenerator.Core/bin/Release/TiaGenerator.Core.${{ github.event.release.tag_name }}.nupkg
       
       - name: Publish the package to GPR
         run: dotnet nuget push **/*.nupkg --api-key ${{secrets.GITHUB_TOKEN}} --no-symbols true
