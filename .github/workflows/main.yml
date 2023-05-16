@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
-          source-url: https://nuget.pkg.github.com/janbiehl/index.json
+          source-url: https://nuget.pkg.github.com/janbiehl/TiaGenerator.Core/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: dotnet build TiaGenerator.Core
