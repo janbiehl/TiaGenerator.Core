@@ -4,6 +4,13 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>8</LangVersion>
         <Nullable>enable</Nullable>
+        <Title>TiaGenerator.Core</Title>
+        <Authors>Jan Biehl</Authors>
+        <Description>This is the core library for the TiaGenerator application.</Description>
+        <PackageProjectUrl>https://github.com/janbiehl/TiaGenerator.Core</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/janbiehl/TiaGenerator.Core/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/janbiehl/TiaGenerator.Core</RepositoryUrl>
+        <RepositoryType>GIT</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
