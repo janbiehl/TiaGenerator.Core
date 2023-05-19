@@ -33,4 +33,4 @@ jobs:
           path: ./output/TiaGenerator.Core.${{ github.event.release.tag_name }}.nupkg
       
       - name: Publish to Github Nuget Package Store
-        run: dotnet nuget push ./output/*.nupkg --source "https://nuget.pkg.github.com/janbiehl/index.json" --api-key ${{secrets.NUGET_TOKEN}}
+        run: dotnet nuget push ./output/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.NUGET_TOKEN}}
