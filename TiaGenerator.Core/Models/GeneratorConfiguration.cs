@@ -13,7 +13,7 @@ namespace TiaGenerator.Core.Models
 		public string? Name { get; set; }
 		public string? Description { get; set; }
 		public string? Author { get; set; }
-		public List<GeneratorAction>? Actions { get; set; }
+		public IEnumerable<GeneratorAction>? Actions { get; set; }
 
 		/// <inheritdoc />
 		public override string ToString()
