@@ -6,6 +6,6 @@ namespace TiaGenerator.Core.Models
 	{
 		public string? Type { get; set; }
 
-		public abstract ActionResult Execute(IDataStore datastore);
+		public abstract (ActionResult result, string message) Execute(IDataStore datastore);
 	}
 }
