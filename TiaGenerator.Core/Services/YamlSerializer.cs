@@ -27,6 +27,7 @@ namespace TiaGenerator.Core.Services
 			.WithTagMapping("!CreatePlcAction", typeof(ICreatePlcAction))
 			.WithTagMapping("!OpenProjectAction", typeof(IOpenProjectAction))
 			.WithTagMapping("!CopyProjectAction", typeof(ICopyProjectAction))
+			.WithTagMapping("!CreateTiaInstanceAction", typeof(ICreateTiaInstanceAction))
 			.Build();
 
 		private static readonly YamlDotNet.Serialization.ISerializer DefaultSerializer = new SerializerBuilder()
@@ -35,6 +36,7 @@ namespace TiaGenerator.Core.Services
 			.WithTagMapping("!CreatePlcAction", typeof(ICreatePlcAction))
 			.WithTagMapping("!OpenProjectAction", typeof(IOpenProjectAction))
 			.WithTagMapping("!CopyProjectAction", typeof(ICopyProjectAction))
+			.WithTagMapping("!CreateTiaInstanceAction", typeof(ICreateTiaInstanceAction))
 			.Build();
 
 		/// <inheritdoc />
