@@ -6,7 +6,7 @@ namespace TiaGenerator.Core.Interfaces
 	/// <remarks>
 	///	The source project might also be a archive file (.zapXX)
 	/// </remarks>
-	public interface ICopyProjectAction
+	public interface ICopyProjectAction : IAction
 	{
 		/// <summary>
 		/// The path to the source project file
@@ -15,10 +15,10 @@ namespace TiaGenerator.Core.Interfaces
 		///	The source project might also be a archive file (.zapXX)
 		/// </remarks>
 		string? SourceProjectFile { get; set; }
-		
+
 		/// <summary>
 		/// The path to the directory where the project will be copied to 
 		/// </summary>
-		string? TargetProjectDirectory { get; set; }	
+		string? TargetProjectDirectory { get; set; }
 	}
 }

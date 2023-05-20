@@ -3,7 +3,7 @@ namespace TiaGenerator.Core.Interfaces
 	/// <summary>
 	/// This action opens a existing Siemens TIA Portal project
 	/// </summary>
-	public interface IOpenProjectAction
+	public interface IOpenProjectAction : IAction
 	{
 		/// <summary>
 		/// The path to the siemens project file
